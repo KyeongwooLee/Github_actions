@@ -17,4 +17,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo “Goodbye from ${COURSE}!”
+      - run: echo "My secret is ${{ secrets.MY_SECRETS }}"
       - run: ls -a
