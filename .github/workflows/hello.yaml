@@ -8,7 +8,13 @@ jobs:
       COURSE: CloudComputing
     steps:
       - uses: actions/checkout@v4
-      - name: Say hello
-        run: echo "Hello From ${COURSE}"
+      - run: echo "Hello From ${COURSE}"
       - run: echo “I’ll list files.”
       - run: ls -al
+
+  goodbye:
+    needs: greet
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo “Goodbye from ${COURSE}!”
+      - run: ls -a
